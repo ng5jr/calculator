@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  background-color: var(--body);
+  font-family: "Spartan", sans-serif;
+  color: var(--textspecial);
+  margin: 50px auto;
+  opacity: 0;
+}
+
+.color2 {
+  --display: hsl(0, 0%, 93%);
+  --body: hsl(0, 0%, 90%);
+  --calculator: hsl(0, 5%, 81%);
+  --numberkeys: hsl(30, 25%, 89%);
+  --borderKeys: hsl(28, 16%, 65%);
+  --delr: hsl(185, 42%, 37%);
+  --delrBorder: hsl(185, 58%, 25%);
+  --equal: hsl(25, 98%, 40%);
+  --equalBorder: hsl(25, 99%, 27%);
+  --text: hsl(60, 10%, 19%);
+  --textspecial: white;
+  --textop: black;
+}
+
+.color1 {
+  --display: hsl(224, 36%, 15%);
+  --body: hsl(222, 26%, 31%);
+  --calculator: hsl(223, 31%, 20%);
+  --numberkeys: hsl(30, 25%, 89%);
+  --borderKeys: hsl(28, 16%, 65%);
+  --delr: hsl(225, 21%, 49%);
+  --delrBorder: hsl(224, 28%, 35%);
+  --equal: hsl(6, 63%, 50%);
+  --equalBorder: hsl(6, 70%, 34%);
+  --text: hsl(221, 14%, 31%);
+  --textspecial: white;
+  --textop: white;
+}
+
+.color3 {
+  --display: hsl(224, 36%, 15%);
+  --body: hsl(268, 75%, 9%);
+  --calculator: hsl(268, 71%, 12%);
+  --numberkeys: hsl(268, 47%, 21%);
+  --borderKeys: hsl(290, 70%, 36%);
+  --delr: hsl(281, 89%, 26%);
+  --delrBorder: hsl(285, 91%, 52%);
+  --equal: hsl(176, 100%, 44%);
+  --equalBorder: hsl(177, 92%, 70%);
+  --text: hsl(52, 100%, 62%);
+  --textspecial: white;
+  --textop: hsl(52, 100%, 62%);
+}
+
+.container {
+  margin: auto;
+  width: 500px;
+  height: fit-content;
+}
+
+/* Header styles */
+
+.header {
+  display: grid;
+  grid-template-columns: 60px 60px 260px 60px 60px;
+  grid-template-rows: 30px 30px;
+  grid-auto-flow: column;
+}
+
+.title {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 30px;
+  color: var(--textop);
+}
+.themeTitle {
+  font-size: 10px;
+  grid-column: 4;
+  grid-row: 2 / 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 13px;
+  color: var(--textop);
+}
+
+.themeNumbers {
+  font-size: 10px;
+  grid-column: 5;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  color: var(--textop);
+}
+
+.switch {
+  grid-column: 5;
+  grid-row: 2/ 2;
+  display: flex;
+  align-items: center;
+
+  border-radius: 30px;
+  background-color: var(--calculator);
+  height: 20px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.switch:hover {
+  cursor: pointer;
+}
+
+.switch1 {
+  justify-content: flex-start;
+}
+.switch2 {
+  justify-content: center;
+}
+.switch3 {
+  justify-content: flex-end;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: var(--equal);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Display Styles */
+
+.display-container {
+  display: flex;
+  padding: 20px;
+  margin: 20px auto 20px;
+  height: 40px;
+  background-color: var(--display);
+  border-radius: 10px;
+  font-size: 30px;
+  text-align: right;
+  color: var(--text);
+}
+
+.display {
+  width: 90%;
+  overflow: hidden;
+}
+
+.displayOperator {
+  width: 10%;
+  text-align: center;
+}
+
+.signo {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+/* Calculator styles */
+
+.calculatorcontainer {
+  background-color: var(--calculator);
+  display: flex;
+  border-radius: 10px;
+}
+
+.calculator {
+  position: relative;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: [col] 125px [col] 125px [col] 125px [col] 125px;
+  grid-template-rows: repeat(5, 80px);
+  justify-content: space-between;
+  color: var(--text);
+}
+
+.calculator div {
+  font-family: "Spartan", sans-serif;
+  font-size: 30px;
+  width: 90px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+  border-radius: 15px;
+  border-bottom: 4px solid var(--borderKeys);
+}
+
+.calculator div:hover {
+  cursor: pointer;
+  zoom: 0.97;
+}
+
+.keys {
+  background-color: var(--numberkeys);
+}
+
+#reset {
+  grid-column: col / span 2;
+
+  width: 215px;
+}
+
+#equal {
+  grid-column: col 3 / span 2;
+
+  width: 215px;
+  background-color: var(--equal);
+  border-bottom: 4px solid var(--equalBorder);
+}
+
+div .del,
+div .reset,
+div .equal {
+  background-color: var(--delr);
+  border-bottom: 4px solid var(--delrBorder);
+  color: var(--textspecial);
+  font-size: 20px;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+}
+
+h2 {
+  background-color: red;
+  font-size: 50px;
+}
+h3 {
+  background-color: black;
+  font-size: 50px;
+}
+
+.un,
+.do,
+.tre {
+  width: 200px;
+  height: 50px;
+  background-color: blue;
+  margin: 20px;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 500px) {
+  body {
+    overflow: hidden;
+  }
+  .container {
+    margin: auto;
+    width: 360px;
+    height: fit-content;
+    max-height: 100%;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 60px 60px 120px 60px 60px;
+    grid-template-rows: 30px 30px;
+    grid-auto-flow: column;
+  }
+  .calculator {
+    grid-template-columns: [col] 90px [col] 90px [col] 90px [col] 90px;
+    grid-template-rows: repeat(5, 90px);
+
+    color: var(--text);
+  }
+  #equal {
+    grid-column: col 3 / span 2;
+
+    width: 165px;
+    background-color: var(--equal);
+    border-bottom: 4px solid var(--equalBorder);
+  }
+  #reset {
+    grid-column: col / span 2;
+
+    width: 165px;
+  }
+  .calculator div {
+    width: 70px;
+    height: 60px;
+  }
+}
